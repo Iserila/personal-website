@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+
+@theme {
+    /* Fonts */
+    --font-nunito: "Nunito", sans-serif;
+    --font-great-vibes: "Great Vibes", cursive;
+    --font-cinzel: "Cinzel Decorative", serif;
+
+    /* Colors */
+    --color-cosmic-bg: #1a1a40;
+    --color-cosmic-purple: #5a189a;
+    --color-cosmic-pink: #ffd6ff;
+    --color-cosmic-sparkle: #f8f0ff;
+}
+
+@layer base {
+    html {
+        @apply font-nunito
+    }
+}
+
+.bg-stars {
+    background: linear-gradient(to bottom, #1a1a40, #3b1c58, #5a189a);
+}
+
+/* The fun stuff :D */
+.sparkle-link {
+    color: var(--color-cosmic-pink);
+    text-shadow: 0 0 6px #fff, 0 0 12px #d4a5ff;
+    transition: all 0.2s ease;
+}
+
+.sparkle-link:hover {
+    color: #fff;
+    text-shadow: 0 0 12px #fff, 0 0 20px var(--color-cosmic-pink);
+    transform: translateY(-2px);
+    transition: all 0.2s ease;
+}
+
+.cat-divider {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 1.5rem;
+}
+
+.cat-divider::before {
+    content: "🐱✨🌙✨🐱";
+}

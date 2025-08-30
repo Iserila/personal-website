@@ -4,26 +4,34 @@
 @layer base {
     @font-face {
         font-family: 'Cinzel Decorative';
-        src: url('./lib/assets/fonts/CinzelDecorative-Regular.ttf') format('truetype');
+        src: url('/fonts/CinzelDecorative-Regular.woff2') format('woff2');
     }
 
     @font-face {
         font-family: 'Great Vibes';
-        src: url('./lib/assets/fonts/GreatVibes-Regular.ttf') format('truetype');
+        src: url('/fonts/GreatVibes-Regular.woff2') format('woff2');
+        font-display: swap;
     }
 
     @font-face {
         font-family: 'Nunito';
-        src: url('./lib/assets/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
-        font-weight: 100 900;
+        src: url('/fonts/Nunito-Regular.woff2') format('woff2');
+        font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family: 'Nunito';
-        src: url('./lib/assets/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
-        font-weight: 100 900;
+        src: url('/fonts/Nunito-Italic.woff2') format('woff2');
+        font-weight: normal;
         font-style: italic;
+    }
+    
+    @font-face {
+        font-family: 'Nunito';
+        src: url('/fonts/Nunito-Bold.woff2') format('woff2');
+        font-weight: 900;
+        font-style: normal;
     }
 
     html {

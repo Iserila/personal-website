@@ -15,7 +15,8 @@
 	</div>
 
 	<div class="mt-10 flex flex-col items-center text-center">
-		<h4 class="mb-2 text-2xl font-cinzel">🌙 My Button</h4>
+		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I should use p, buuuuuut.... -->
+		<p class="mb-2 text-2xl font-cinzel">🌙 My Button</p>
 		<p class="mb-2">Here's my button if you'd like to add me to your site ✨</p>
 
 		<img

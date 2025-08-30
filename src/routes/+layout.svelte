@@ -20,16 +20,19 @@
 	<meta property="og:description" content="My little corner on the internet, come take a look!" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://iserila.com" />
-	<meta property="og:image" content="https://yourdomain.com/iserila-button-highres.gif" />
+	<meta property="og:image" content="https://iserila.com/iserila-button-highres.gif" />
 
 	<!-- Twitter Cards -->
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Iserila ✨" />
 	<meta name="twitter:description" content="My little corner on the internet, come take a look!" />
-	<meta name="twitter:image" content="https://yourdomain.com/iserila-button-highres.gif" />
+	<meta name="twitter:image" content="https://iserila.com/iserila-button-highres.gif" />
 
 	<!-- Favicons -->
 	<link rel="icon" href={favicon} />
+
+	<!-- Font. -->
+	<!-- <link rel="preload" href="/fonts/GreatVibes-Regular.woff2" as="font" type="font/woff2"> -->
 </svelte:head>
 
 {@render children?.()}

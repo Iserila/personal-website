@@ -7,15 +7,15 @@
 	const buttons: string[] = Object.values(files);
 </script>
 
-<footer class="mt-16">
-	<div class="flex flex-wrap gap-4">
+<footer class="mt-16 flex flex-col items-center">
+	<div class="flex flex-wrap items-center justify-center gap-4">
 		{#each buttons as btn}
 			<img src={btn} alt="Button" class="h-[31px] w-[88px]" />
 		{/each}
 	</div>
 
 	<div class="mt-10 flex flex-col items-center text-center">
-		<h3 class="mb-2 text-3xl">🌙 My Button</h3>
+		<h4 class="mb-2 text-3xl">🌙 My Button</h4>
 		<p class="mb-2">Here's my button if you'd like to add me to your site ✨</p>
 
 		<img

@@ -6,6 +6,29 @@
 </script>
 
 <svelte:head>
+	<!-- Basic SEO -->
+	<title>Iserila ✨</title>
+	<meta name="description" content="My little corner on the internet, come take a look!" />
+	<meta
+		name="keywords"
+		content="indieweb, personal site, cats, journal, sparkles, dreamy, iserila"
+	/>
+	<meta name="author" content="Your Name" />
+
+	<!-- Open Graph / social sharing -->
+	<meta property="og:title" content="Iserila ✨" />
+	<meta property="og:description" content="My little corner on the internet, come take a look!" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://iserila.com" />
+	<meta property="og:image" content="https://yourdomain.com/iserila-button-highres.gif" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Iserila ✨" />
+	<meta name="twitter:description" content="My little corner on the internet, come take a look!" />
+	<meta name="twitter:image" content="https://yourdomain.com/iserila-button-highres.gif" />
+
+	<!-- Favicons -->
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

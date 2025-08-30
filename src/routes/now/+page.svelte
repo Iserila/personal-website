@@ -61,13 +61,18 @@
 			<section>
 				<h2 class="font-cinzel text-2xl">🌙 What I'm up to right now</h2>
 				<ul class="space-y-4">
+					<li>Currently doing my motorcylce lessons (A, not A1 or A2)! 🏍️</li>
 					<li>Starting my exam year (2025/2026) in <em>Smart Industry</em> (vocational school).</li>
 					<li>
-						Quit Instagram, Snapchat & Facebook 🎉 My screen time's still kinda high though — trying
+						Quit Instagram, Snapchat & Facebook 🎉 My screen time's still kinda high though, trying
 						to swap it for reading, sketching, and running.
 					</li>
 					<li>
 						Running fell off a bit after I started in January… but I'm getting back at it 🏃✨
+					</li>
+					<li>
+						In the process of getting my digital life together, I am deleting old accounts along
+						with their data. 🧹
 					</li>
 				</ul>
 			</section>
@@ -84,7 +89,7 @@
 								class="w-42 rounded-md object-contain shadow-md"
 							/>
 							<p class="mt-2 text-center text-sm">
-								{book.title} - <span class="opacity-70">{book.author}</span>
+								{book.title} - <span class="opacity-70 text-cosmic-pink ">{book.author}</span>
 							</p>
 						</div>
 					{/each}

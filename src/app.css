@@ -1,6 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Great+Vibes&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import "tailwindcss";
 
+/* Font stuff */
+@layer base {
+    @font-face {
+        font-family: 'Cinzel Decorative';
+        src: url('./lib/assets/fonts/CinzelDecorative-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Great Vibes';
+        src: url('./lib/assets/fonts/GreatVibes-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Nunito';
+        src: url('./lib/assets/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'Nunito';
+        src: url('./lib/assets/fonts/Nunito-Italic-VariableFont_wght.ttf') format('truetype');
+        font-weight: 100 900;
+        font-style: italic;
+    }
+
+    html {
+        @apply font-nunito
+    }
+}
 
 @theme {
     /* Fonts */
@@ -15,17 +44,11 @@
     --color-cosmic-sparkle: #f8f0ff;
 }
 
-@layer base {
-    html {
-        @apply font-nunito
-    }
-}
-
+/* The fun stuff :D */
 .bg-stars {
     background: linear-gradient(to bottom, #1a1a40, #3b1c58, #5a189a);
 }
 
-/* The fun stuff :D */
 .sparkle-link {
     color: var(--color-cosmic-pink);
     text-shadow: 0 0 6px #fff, 0 0 12px #d4a5ff;

@@ -16,7 +16,17 @@
 
 	<div class="mt-10 flex flex-col items-center text-center">
 		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I should use p, buuuuuut.... -->
-		<p class="mb-2 text-2xl font-cinzel">🌙 My Button</p>
+		<p class="mb-2 font-cinzel text-2xl">🐈 Friends</p>
+		<p class="mb-2">It's all about the friends we make along the way 🩷</p>
+
+		<a href="https://beanrob.com">
+			<img src="https://beanrob.com/static/button.gif" alt="beanrob button" />
+		</a>
+	</div>
+
+	<div class="mt-10 flex flex-col items-center text-center">
+		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I should use p, buuuuuut.... -->
+		<p class="mb-2 font-cinzel text-2xl">🌙 My Button</p>
 		<p class="mb-2">Here's my button if you'd like to add me to your site ✨</p>
 
 		<img

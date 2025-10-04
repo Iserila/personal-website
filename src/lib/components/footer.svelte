@@ -19,9 +19,15 @@
 		<p class="mb-2 font-cinzel text-2xl">🐈 Friends</p>
 		<p class="mb-2">It's all about the friends we make along the way 🩷</p>
 
-		<a href="https://beanrob.com">
-			<img src="https://beanrob.com/static/button.gif" alt="beanrob button" />
-		</a>
+		<div class="flex flex-wrap items-center justify-center gap-2">
+			<a href="https://beanrob.com">
+				<img src="https://beanrob.com/static/button.gif" alt="beanrob button" />
+			</a>
+		</div>
+		<div class="mt-6">
+			<p class="italic">A lazy peasant without a ✨ button ✨</p>
+			<a href="https://juliusdeboer.com" target="_blank" class="text-xl font-cinzel underline decoration-dotted">Julius</a>
+		</div>
 	</div>
 
 	<div class="mt-10 flex flex-col items-center text-center">

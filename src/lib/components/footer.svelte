@@ -15,7 +15,7 @@
 	</div>
 
 	<div class="mt-10 flex flex-col items-center text-center">
-		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I should use p, buuuuuut.... -->
+		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I shouldn't use p, buuuuuut.... -->
 		<p class="mb-2 font-cinzel text-2xl">🐈 Friends</p>
 		<p class="mb-2">It's all about the friends we make along the way 🩷</p>
 
@@ -31,7 +31,7 @@
 	</div>
 
 	<div class="mt-10 flex flex-col items-center text-center">
-		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I should use p, buuuuuut.... -->
+		<!-- The DevTools Lighthouse screams at me for using any heading tag, and I'm pretty sure I shouldn't use p, buuuuuut.... -->
 		<p class="mb-2 font-cinzel text-2xl">🌙 My Button</p>
 		<p class="mb-2">Here's my button if you'd like to add me to your site ✨</p>
 

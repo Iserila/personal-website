@@ -6,7 +6,7 @@
 	<title>Iserila ✨</title>
 </svelte:head>
 
-<div class="bg-stars flex h-screen flex-col items-center justify-center text-cosmic-sparkle px-5">
+<div class="bg-stars flex min-h-screen flex-col items-center justify-center px-5 text-cosmic-sparkle py-20">
 	<main class="text-center">
 		<h1 class="mb-6 font-great-vibes text-5xl">🌙 Hiya, welcome!</h1>
 		<p class="max-w-xl text-center text-xl">
@@ -17,13 +17,13 @@
 
 		<nav class="mt-8 flex flex-wrap justify-center gap-8 font-cinzel">
 			<a rel="me" href="/about" class="sparkle-link text-2xl"> 👋 About Me </a>
+			<a rel="me" href="/uses" class="sparkle-link text-2xl"> 🛠️ What I use </a>
 			<a rel="me" href="/now" class="sparkle-link text-2xl"> 🌟 Now </a>
 
 			<!-- TODO: Soon..? -->
 			<!-- <a rel="me" href="/journal" class="sparkle-link text-2xl"> 📖 Journal </a> -->
 			<!-- <a rel="me" href="/projects" class="sparkle-link text-2xl"> 💻 Projects </a> -->
 			<!-- <a rel="me" href="/cats" class="sparkle-link text-2xl"> 🐱 Kitties!! </a> -->
-			<!-- <a rel="me" href="/uses" class="sparkle-link text-2xl"> 🛠️ What I use </a> -->
 		</nav>
 	</main>
 	<Footer />

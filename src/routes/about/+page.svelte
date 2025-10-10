@@ -41,6 +41,11 @@
 			text: 'My first attempt at an IndieWeb site (this one!) ✨'
 		},
 		{
+			emoji: '🧑‍💻',
+			year: 2025,
+			text: 'My first hackathon, it was well-organized and an amazing experience'
+		},
+		{
 			emoji: '🤔',
 			year: 2026,
 			text: 'To be continued...'
@@ -71,7 +76,7 @@
 </svelte:head>
 
 <div
-	class="bg-stars flex min-h-screen flex-col items-center justify-start gap-8 p-8 text-cosmic-sparkle px-2"
+	class="bg-stars flex min-h-screen flex-col items-center justify-start gap-8 p-8 px-2 text-cosmic-sparkle"
 >
 	<main>
 		<header class="mt-8 mb-8 text-center">

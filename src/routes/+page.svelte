@@ -22,6 +22,7 @@
 			<a rel="me" href="/uses" class="sparkle-link text-2xl"> 🛠️ What I use </a>
 			<a rel="me" href="/now" class="sparkle-link text-2xl"> 🌟 Now </a>
 			<a rel="me" href="/graveyard" class="sparkle-link text-2xl"> 🪦 Graveyard </a>
+			<a rel="me" href="/shares" class="sparkle-link text-2xl"> 📤 Shares </a>
 
 			<!-- TODO: Soon..? -->
 			<!-- <a rel="me" href="/journal" class="sparkle-link text-2xl"> 📖 Journal </a> -->

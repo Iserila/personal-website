@@ -28,3 +28,10 @@ export interface GraveyardProject {
 	killed?: boolean;
 	groupSize?: number;
 }
+
+export interface Share {
+	title: string;
+	description: string;
+	url: string;
+	type: 'youtube' | 'link';
+}

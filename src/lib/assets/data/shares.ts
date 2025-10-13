@@ -4,7 +4,7 @@ const shares: Share[] = [
 	{
 		title: 'The morning after I killed myself',
 		description:
-			'A rendition of a poem written by Meggie Royer. It was a letter to herself and it was what she need to hear at the time.',
+			'A rendition of a poem written by Meggie Royer. It was a letter to herself and it was what she needed to hear at the time.',
 		url: 'https://www.youtube-nocookie.com/embed/nEX-9exMc1A',
 		type: 'youtube'
 	},
@@ -17,7 +17,7 @@ const shares: Share[] = [
 	{
 		title: 'AI Slop Is Destroying The Internet',
 		description:
-			'The Danger of Trusting AI with Facts - AI-generated content is flooding theinternet and making false information look more convincing than ever.',
+			'The Danger of Trusting AI with Facts - AI-generated content is flooding the internet and making false information look more convincing than ever.',
 		url: 'https://www.youtube-nocookie.com/embed/_zfN9wnPvU0',
 		type: 'youtube'
 	},

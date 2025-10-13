@@ -11,7 +11,7 @@
 >
 	<main class="text-center">
 		<h1 class="mb-6 font-great-vibes text-5xl">🌙 Hiya, welcome!</h1>
-		<p class="max-w-xl text-center text-xl">
+		<p class="text-center text-xl">
 			Hi, I'm Iserila👋 This is my corner of the web. Make yourself at home! 💫
 		</p>
 

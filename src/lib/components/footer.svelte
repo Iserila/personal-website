@@ -56,7 +56,7 @@
 
 	<div class="mt-10 flex flex-col items-center text-center">
 		<p class="mb-2 font-cinzel text-2xl">🩵 Fanlistings</p>
-		<p class="mb-2">Fanlistings I'm a part of (of applied to) 💫</p>
+		<p class="mb-2">Fanlistings I'm a part of (or applied to) 💫</p>
 		<div class="flex flex-wrap items-center justify-center gap-2">
 			{#each fanlistings as fanlisting}
 				<a href={fanlisting.url}>

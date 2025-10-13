@@ -1,4 +1,6 @@
 <script lang="ts">
+	import fanlistings from '$lib/assets/data/fanlistings';
+
 	// I can't help but feel like there has to be an easier way
 	const files: Object = import.meta.glob('/src/lib/assets/buttons/*.{png,jpg,jpeg,gif,svg}', {
 		eager: true,
@@ -26,7 +28,11 @@
 		</div>
 		<div class="mt-6">
 			<p class="italic">A lazy peasant without a ✨ button ✨</p>
-			<a href="https://juliusdeboer.com" target="_blank" class="text-xl font-cinzel underline decoration-dotted">Julius</a>
+			<a
+				href="https://juliusdeboer.com"
+				target="_blank"
+				class="font-cinzel text-xl underline decoration-dotted">Julius</a
+			>
 		</div>
 	</div>
 
@@ -45,6 +51,22 @@
 			<a href="/iserila-button-highres.gif" class="sparkle-link" rel="me" target="_blank"
 				>high-res</a
 			>
+		</div>
+	</div>
+
+	<div class="mt-10 flex flex-col items-center text-center">
+		<p class="mb-2 font-cinzel text-2xl">🩵 Fanlistings</p>
+		<p class="mb-2">Fanlistings I'm a part of (of applied to) 💫</p>
+		<div class="flex flex-wrap items-center justify-center gap-2">
+			{#each fanlistings as fanlisting}
+				<a href={fanlisting.url}>
+					<img
+						src={fanlisting.image}
+						alt={fanlisting.name + ' Fanlisting Icon'}
+						title={fanlisting.name}
+					/>
+				</a>
+			{/each}
 		</div>
 	</div>
 </footer>

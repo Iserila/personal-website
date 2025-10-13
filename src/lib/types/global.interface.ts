@@ -35,3 +35,9 @@ export interface Share {
 	url: string;
 	type: 'youtube' | 'link';
 }
+
+export interface Fanlisting {
+	name: string;
+	image: string;
+	url: string;
+}

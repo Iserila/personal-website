@@ -2,6 +2,11 @@ import type { Fanlisting } from '$lib/types/global.interface';
 
 const fanlistings: Fanlisting[] = [
 	{
+		name: 'Cats & Kittens',
+		image: '/fanlistings/cats.png',
+		url: 'https://theatregirl.net/cats'
+	},
+	{
 		name: 'League of Legends',
 		image: '/fanlistings/lol.jpg',
 		url: 'https://fan.midnight-cloud.net/lol'

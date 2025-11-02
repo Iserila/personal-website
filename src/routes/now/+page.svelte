@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { buildDate } from '$lib';
+
 	const dateOptions: Intl.DateTimeFormatOptions = {
 		dateStyle: 'long'
 	};
+	const formatted = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(buildDate));
 
 	const books = [
 		{
@@ -41,9 +44,7 @@
 		<header class="mt-8 mb-8 text-center">
 			<h1 class="mb-2 font-great-vibes text-5xl">🌟 Now</h1>
 			<p class="mx-auto max-w-xl text-lg">
-				Last updated: <span class="font-bold"
-					>{Intl.DateTimeFormat('en-US', dateOptions).format()}</span
-				>
+				Last updated: <span class="font-bold">{formatted}</span>
 				<br />
 				<span class="text-sm"
 					>Inspired by
@@ -89,7 +90,7 @@
 								class="w-42 rounded-md object-contain shadow-md"
 							/>
 							<p class="mt-2 text-center text-sm">
-								{book.title} - <span class="opacity-70 text-cosmic-pink ">{book.author}</span>
+								{book.title} - <span class="text-cosmic-pink opacity-70">{book.author}</span>
 							</p>
 						</div>
 					{/each}

@@ -41,7 +41,7 @@
 			</p>
 		</header>
 
-		<div class="grid grid-cols-3 gap-4">
+		<div class="grid gap-4 xl:grid-cols-3">
 			{#each graveyardProjects as project}
 				<div
 					class="flex h-full flex-col rounded-lg border-2 border-cosmic-pink/50 p-4 transition-colors hover:border-cosmic-pink hover:bg-cosmic-bg/50"

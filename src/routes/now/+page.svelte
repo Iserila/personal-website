@@ -61,9 +61,12 @@
 			<!-- Right now -->
 			<section>
 				<h2 class="font-cinzel text-2xl">🌙 What I'm up to right now</h2>
-				<ul class="space-y-4">
-					<li>Currently doing my motorcylce lessons (A, not A1 or A2)! 🏍️</li>
-					<li>Starting my exam year (2025/2026) in <em>Smart Industry</em> (vocational school).</li>
+				<ul class="mt-2 space-y-4">
+					<li>I PASSED FOR MY MOTORCYCLE EXAM 🥰🏍️</li>
+					<li>
+						Currently in my exam year (2025/2026) in <em>Smart Industry</em> (vocational school). Working
+						on a (company) project, which is the exam.
+					</li>
 					<li>
 						Quit Instagram, Snapchat & Facebook 🎉 My screen time's still kinda high though, trying
 						to swap it for reading, sketching, and running.
@@ -75,6 +78,7 @@
 						In the process of getting my digital life together, I am deleting old accounts along
 						with their data. 🧹
 					</li>
+					<li>Experimenting with Fedora as a replacement for Windows. Currently dual-booting 🐧</li>
 				</ul>
 			</section>
 

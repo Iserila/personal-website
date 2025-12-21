@@ -67,11 +67,18 @@
   .window-close {
     @apply h-5 w-5 text-xs;
     @apply flex items-center justify-center;
-    @apply bg-soft hover:bg-destructive;
+    @apply bg-soft hover:bg-accent;
     @apply transition-colors;
   }
   
   .window-content {
     @apply p-4 text-foreground;
+  }
+  
+  .code-block {
+    @apply bg-base/25 border border-accent rounded;
+    @apply h-full p-1;
+    @apply tracking-tighter text-[11px] font-mono;
+    @apply select-all;
   }
 }

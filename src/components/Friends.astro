@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import Window from "../components/Window.astro";
 
 const friends = [
@@ -19,7 +20,9 @@ const friends = [
                 .filter((x) => x.button !== null)
                 .map((friend) => (
                     <a href={friend.url}>
-                        <img
+                        <Image
+                            height={31}
+                            width={88}
                             src={friend.button}
                             alt={`Button from ${friend.name}`}
                         />

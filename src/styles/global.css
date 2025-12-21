@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* Colors */
+@theme {
+  --color-base: #FAD4D4;
+  --color-base-muted: #FFF4E6;
+  
+  --color-foreground: #4A4A4A;
+  --color-foreground-muted: #6B6B6B;
+  
+  --color-primary: #FAD4D4;
+  --color-primary-foreground: #4A4A4A;
+  
+  --color-secondary: #E6D1F0;
+  --color-secondary-foreground: #4A4A4A;
+  
+  --color-accent: #A8E6CF;
+  --color-accent-foreground: #2F5D50;
+  
+  --color-soft: #FFD1DC;
+  
+  --color-border: #E6D1F0;
+  --color-ring: #A8E6CF;
+}
+
+/* Fonts */
+@theme {
+  --font-display: 'Fredericka the Great', sans-serif;
+  --font-body: 'Fauna One', sans-serif;
+}
+
+@layer base {
+  h1 {
+    @apply text-primary-foreground text-5xl font-display;
+  }
+  
+  h2 {
+    @apply text-primary-foreground text-3xl font-display;
+  }
+  
+  body {
+    @apply font-body;
+  }
+  
+  a {
+    @apply hover:text-primary-foreground/50;
+  }
+}
+
+@layer components {
+  .window {
+    @apply border border-border bg-base-muted shadow-lg;
+    @apply transition-all duration-200;
+  }
+  
+  .window-titlebar {
+    @apply flex items-center justify-between;
+    @apply px-4 py-1;
+    @apply text-foreground;
+    @apply border-b border-border;
+  }
+  
+  .window-title {
+    @apply text-xs font-semibold select-none;
+  }
+  
+  .window-close {
+    @apply h-5 w-5 text-xs;
+    @apply flex items-center justify-center;
+    @apply bg-soft hover:bg-destructive;
+    @apply transition-colors;
+  }
+  
+  .window-content {
+    @apply p-4 text-foreground;
+  }
+}

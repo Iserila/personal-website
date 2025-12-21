@@ -1,0 +1,39 @@
+---
+const pages = [
+    {
+        title: "Home",
+        url: "/",
+    },
+    {
+        title: "About",
+        url: "/about",
+    },
+    {
+        title: "What I use",
+        url: "/uses",
+    },
+    {
+        title: "Now",
+        url: "/now",
+    },
+    {
+        title: "Graveyard",
+        url: "/graveyard",
+    },
+    {
+        title: "Shares",
+        url: "/shares",
+    },
+];
+---
+
+<header class="flex justify-between py-4">
+    <div>Iserila 🌸</div>
+    <div class="flex gap-4">
+        {
+            pages.map((page) => {
+                return <a href={page.url}>{page.title}</a>;
+            })
+        }
+    </div>
+</header>

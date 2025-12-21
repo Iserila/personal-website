@@ -1,0 +1,32 @@
+---
+import Window from "../components/Window.astro";
+
+const friends = [
+    {
+        name: "Bean",
+        url: "https://beanrob.com",
+        button: "https://beanrob.com/static/button.gif",
+    },
+];
+---
+
+<Window title="friends.exe">
+    <h2>Friends</h2>
+    <p class="text-sm">It's all about the friends we make along the way 🩷</p>
+    <div class="mt-2 flex gap-1 flex-wrap justify-between">
+        {
+            friends
+                .filter((x) => x.button !== null)
+                .map((friend) => (
+                    <a href={friend.url}>
+                        <img
+                            src={friend.button}
+                            alt={`Button from ${friend.name}`}
+                        />
+                    </a>
+                ))
+        }
+    </div>
+    <h3 class="text-sm mt-4">Lazy peasant(s) without a ✨ button ✨</h3>
+    <a class="font-bold italic" href="https://juliusdeboer.com">Julius</a>
+</Window>

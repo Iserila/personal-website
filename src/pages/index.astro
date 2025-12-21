@@ -1,0 +1,18 @@
+---
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Window from "../components/Window.astro";
+import Friends from "../components/Friends.astro";
+import Fanlistings from "../components/Fanlistings.astro";
+import Buttons from "../components/Buttons.astro";
+---
+
+<Layout title="Home">
+	<h1 class="mt-4">Hiyaa, welcome!</h1>
+	<div class="grid grid-cols-3 gap-4">
+		<Window title="about-me.exe" width="2">Meow</Window>
+		<Friends />
+		<Fanlistings />
+		<Buttons />
+	</div></Layout
+>

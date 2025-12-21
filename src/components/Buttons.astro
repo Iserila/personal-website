@@ -1,0 +1,29 @@
+---
+import Window from "../components/Window.astro";
+
+const buttons = [
+    "chrome.gif",
+    "ditchsocial.gif",
+    "freeware.gif",
+    "graphicdesign.png",
+    "nicotine-plus.png",
+    "no-facebook.png",
+    "piracy.gif",
+];
+---
+
+<Window title="buttons.exe" width="2">
+    <h2>Buttons</h2>
+    <p class="text-sm">Meow! ᓚᘏᗢ</p>
+    <div class="mt-2 flex flex-wrap gap-1 justify-between">
+        {
+            buttons.map((button) => (
+                <img
+                    src={`/buttons/${button}`}
+                    class="h-[31px] w-[88px]"
+                    alt={`Button ${button}`}
+                />
+            ))
+        }
+    </div>
+</Window>

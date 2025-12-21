@@ -1,0 +1,35 @@
+---
+import Window from "../components/Window.astro";
+
+const listings = [
+    {
+        name: "Cats & Kittens",
+        image: "/fanlistings/cats.png",
+        url: "https://theatregirl.net/cats",
+    },
+    {
+        name: "League of Legends",
+        image: "/fanlistings/lol.png",
+        url: "https://fan.midnight-cloud.net/lol",
+    },
+    {
+        name: "Minecraft",
+        image: "/fanlistings/mc.png",
+        url: "https://fanlistings.melankorin.net/minecraft",
+    },
+];
+---
+
+<Window title="fanlistings.exe">
+    <h2>Fanlistings</h2>
+    <p class="text-sm">Fanlistings I'm a part of (or applied to) 💫</p>
+    <div class="mt-2 grid grid-cols-3 gap-2">
+        {
+            listings.map((listing) => (
+                <a href={listing.url}>
+                    <img src={listing.image} alt={listing.name} />
+                </a>
+            ))
+        }
+    </div>
+</Window>

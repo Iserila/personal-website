@@ -1,0 +1,13 @@
+---
+const { title = "window.exe", width = 1 } = Astro.props;
+---
+
+<div class={`window col-span-${width}`}>
+    <div class="window-titlebar">
+        <span class="window-title">{title}</span>
+        <div class="window-close">✕</div>
+    </div>
+    <div class="window-content">
+        <slot />
+    </div>
+</div>

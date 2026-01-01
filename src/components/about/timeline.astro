@@ -1,0 +1,69 @@
+---
+import Window from "../Window.astro";
+
+const timeline = [
+    {
+        emoji: "🐥",
+        year: 2004,
+        text: "Spawned into this world",
+    },
+    {
+        emoji: "🏡",
+        year: 2011,
+        text: "Moved to current home",
+    },
+    {
+        emoji: "🐈",
+        year: 2014,
+        text: "First cats: Tijger & Minoes",
+    },
+    {
+        emoji: "🧊",
+        year: 2018,
+        text: "First (real) game, Minecraft (yes, I was quite late)",
+    },
+    {
+        emoji: "🤖",
+        year: 2020,
+        text: "First lines of code (Discord bot)",
+    },
+    {
+        emoji: "🌐",
+        year: 2021,
+        text: "First (proper) attempt at making a website",
+    },
+    {
+        emoji: "🥰",
+        year: 2024,
+        text: "First cat café (Chalon de Thé, Metz, France)",
+    },
+    {
+        emoji: "📖",
+        year: 2025,
+        text: "First attempt at an IndieWeb site",
+    },
+    {
+        emoji: "🧑‍💻",
+        year: 2025,
+        text: "First hackathon",
+    },
+    {
+        emoji: "🤔",
+        year: 2026,
+        text: "To be continued...",
+    },
+];
+---
+
+<Window title="timeline.log" width={2}>
+    <h2>Timeline</h2>
+    <ul class="space-y-1 text-sm mt-2">
+        {
+            timeline.map((entry) => (
+                <li>
+                    {entry.emoji} <strong>{entry.year}</strong> - {entry.text}
+                </li>
+            ))
+        }
+    </ul>
+</Window>

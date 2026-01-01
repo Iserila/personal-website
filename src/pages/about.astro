@@ -1,0 +1,22 @@
+---
+import Intro from "../components/about/intro.astro";
+import Nicks from "../components/about/nicks.astro";
+import QuickFacts from "../components/about/quick-facts.astro";
+import Timeline from "../components/about/timeline.astro";
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Home">
+    <h1 class="mt-4">Me myself & I</h1>
+    <p>
+        Welcome to my corner of the web! Online I go by the name of Iserila, a
+        lover of cats & pink. (^_^;)
+    </p>
+    <div class="grid grid-cols-3 gap-4">
+        <Intro />
+        <Nicks />
+        <QuickFacts />
+        <Timeline />
+    </div>
+</Layout>

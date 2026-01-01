@@ -1,5 +1,11 @@
 ---
-const pages = [
+interface Page {
+    title: string;
+    url: string;
+}
+
+const current = Astro.url.pathname;
+const pages: Page[] = [
     {
         title: "Home",
         url: "/",
@@ -25,6 +31,12 @@ const pages = [
         url: "/shares",
     },
 ];
+
+function linkClasses(page: Page) {
+    return `border-b-2 ${
+        current === page.url ? "border-b-accent" : "border-transparent"
+    }`;
+}
 ---
 
 <header class="flex justify-between py-4">
@@ -32,7 +44,11 @@ const pages = [
     <div class="flex gap-4">
         {
             pages.map((page) => {
-                return <a href={page.url}>{page.title}</a>;
+                return (
+                    <a href={page.url} class={linkClasses(page)}>
+                        {page.title}
+                    </a>
+                );
             })
         }
     </div>

@@ -1,0 +1,38 @@
+---
+import Window from "../components/Window.astro";
+import SocialLink from "./atoms/SocialLink.astro";
+
+const links = [
+    {
+        label: "Website Repo",
+        url: "https://github.com/Iserila/personal-website",
+    },
+    {
+        label: "Github",
+        url: "https://github.com/Iserila",
+    },
+    {
+        label: "Discord",
+        url: "https://discord.com/users/462914535351779328",
+    },
+];
+---
+
+<Window title="links.exe">
+    <h2>Links</h2>
+    <p class="text-sm">My other places to visit &lt;3</p>
+    <ul class="mt-2 space-y-2">
+        {
+            links.map((link) => (
+                <li class="flex items-start gap-1 group">
+                    <img
+                        src="/icons/flower.svg"
+                        alt=""
+                        class="mt-1 h-5 w-5 shrink-0 group-hover:rotate-45 duration-300"
+                    />
+                    <SocialLink label={link.label} url={link.url} />
+                </li>
+            ))
+        }
+    </ul>
+</Window>

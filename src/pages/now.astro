@@ -1,0 +1,67 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Window from "../components/Window.astro";
+
+const now = [
+    {
+        title: "Exam year",
+        description:
+            "Currently in my exam year (2025/2026) in Smart Industry (vocational school).",
+    },
+    {
+        title: "Reducing screentime",
+        description:
+            "Quit Instagram, Snapchat & Facebook 🎉 My screen time's still kinda high though, trying to swap it for reading, sketching, and running.",
+    },
+    {
+        title: "Cleaning up digitally",
+        description:
+            "In the process of getting my digital life together, Getting my files in one place & deleting old accounts along with their data. 🧹",
+    },
+    {
+        title: "Switched phone",
+        description:
+            "Switched to a Pixel with GrapheneOS for more privacy & more control over my device.",
+    },
+    {
+        title: "Made the jump to Linux",
+        description:
+            "Reset my laptop with dual-boot. Arch (btw) as daily driver & Windows for when I really, really need it. Let's see how long I can keep this going.",
+    },
+    {
+        title: "Bullying Julius",
+        description:
+            "Constantly bullying Julius into making an 88x31 button to replace his 'Lazy Peasant' section with an actual button. Get started already mate ;-;",
+    },
+];
+---
+
+<Layout title="Now">
+    <h1 class="mt-4">Now</h1>
+    <div>
+        <!--
+            TODO(Iserila): I should figure out how to generate this dynamically.
+            My previous attempts in svelte resulted into it always
+            showing the current day, so maybe later ;-;
+        -->
+        <p>Last updated: January 11, 2026</p>
+        <p>
+            Inspired by
+            <a href="https://sive.rs" target="_blank">Derek Sivers</a>
+            . If you have your own site, why not
+            <a href="https://nownownow.com/about" target="blank">
+                create one yourself
+            </a>?
+        </p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+        {
+            now.map((item, idx) => (
+                <Window title={`now-${idx + 1}.txt`}>
+                    <h2>{item.title}</h2>
+                    <p>{item.description}</p>
+                </Window>
+            ))
+        }
+    </div>
+</Layout>

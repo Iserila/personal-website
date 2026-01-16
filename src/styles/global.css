@@ -88,13 +88,6 @@
         @apply flex flex-col h-full;
     }
 
-    .code-block {
-        @apply bg-base/25 border border-accent rounded;
-        @apply h-full p-1;
-        @apply tracking-tighter text-[11px] font-mono;
-        @apply select-all;
-    }
-
     .badge {
         @apply bg-accent border-accent-foreground;
         @apply text-accent-foreground text-xs;

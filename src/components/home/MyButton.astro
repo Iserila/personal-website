@@ -3,36 +3,32 @@ import { Image } from "astro:assets";
 import Window from "../Window.astro";
 ---
 
-<Window title="my-button.exe">
+<Window title="my-button.exe" width={2}>
     <h2>My button</h2>
     <p class="text-sm">
         If you'd like to, you can link back to me on your site. Feel free to let
         me know, I'll add you back!
     </p>
     <div class="mt-4">
-        <Image
-            src="/iserila-button.gif"
-            width={88}
-            height={31}
-            alt="My 88x31 button"
-        />
-        <!-- NOTE(Ben): I hate how this is formatted... ;-; -->
-        <pre
-            class="code-block mt-4">
-<code>&lt;a href="https://iserila.com"&gt;
-  &lt;img
-    src="https://iserila.com/iserila-button.gif"
-    alt="iserila 88x31 button" 
-  /&gt;
-&lt;/a&gt;</code>
-</pre>
+        <a href="/iserila-button.gif">
+            <Image
+                src="/iserila-button.gif"
+                width={88}
+                height={31}
+                alt="My 88x31 button"
+            />
+        </a>
         <p class="text-xs mt-1">
-            Hotlinking my button is a-okay! • <a
+            Click the button to open the file/URL • Hotlinking my button is
+            a-okay!
+        </p>
+        <p class="text-xs mt-1">
+            <a
                 class="text-primary-foreground-75 italic"
                 target="_blank"
                 href="https://iserila.com/iserila-button-highres.gif"
             >
-                High-res?
+                Want High-res? (not to hotlink, please :>)
             </a>
         </p>
     </div>

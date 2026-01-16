@@ -1,0 +1,162 @@
+---
+import { Image } from "astro:assets";
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface GraveyardImage {
+    type: "landscape" | "portrait" | "square";
+    url: string;
+}
+
+interface GraveyardItem {
+    title: string;
+    description: string;
+    type: "website" | "bot" | "other";
+    image?: GraveyardImage;
+    groupSize?: number;
+    killed?: boolean;
+}
+
+const graveyard: GraveyardItem[] = [
+    {
+        title: "PixMatch",
+        description:
+            "An idea suggested by a friend. A platform to find matching profile pictures for you and your friends.",
+        type: "website",
+        image: {
+            type: "landscape",
+            url: "/graveyard/pixmatch.png",
+        },
+    },
+    {
+        title: "Hypixel Stats",
+        description: "A Discord bot that retrieves Hypixel player stats.",
+        type: "bot",
+        image: {
+            type: "landscape",
+            url: "/graveyard/hypixel-stats.png",
+        },
+    },
+    {
+        title: "RandomReddit",
+        description:
+            "A Discord bot that retrieves random Reddit posts from subreddits you specify.",
+        type: "bot",
+    },
+    {
+        title: "Divecloud Blogs",
+        description:
+            "A 'blogging' platform to write about news & stuff two friends and I find interesting.",
+        type: "website",
+        groupSize: 3,
+    },
+    {
+        title: "Flower Language Wiki",
+        description: "A wiki about the language of flowers.",
+        type: "website",
+    },
+    {
+        title: "Scarlet",
+        description: "Yet another general purpose Discord bot.",
+        type: "bot",
+        groupSize: 3,
+    },
+    {
+        title: "FyxDash",
+        description:
+            "A personal dashbaord to manage my CND assets on Cloudflare R2.",
+        type: "website",
+        image: {
+            type: "landscape",
+            url: "/graveyard/fyxdash.png",
+        },
+    },
+    {
+        title: "PreventSuicide",
+        description:
+            "A Discord bot focussed on preventing suicide by providing information and (at least an attempt at) recognizing messages indicating suicidal ideation.",
+        type: "bot",
+        image: {
+            type: "landscape",
+            url: "/graveyard/prevent-suicide.png",
+        },
+    },
+    {
+        title: "MyHomework",
+        description:
+            "A platform meant to keep track, organize and plan your homework & tests. Never made it further than a really, really shitty design. I really have come a long way since then...",
+        type: "website",
+        image: {
+            type: "landscape",
+            url: "/graveyard/myhomework.png",
+        },
+    },
+    {
+        title: "Florida Man Calendar",
+        description:
+            "A calendar that shows Florida Man activities for each day.",
+        type: "website",
+        groupSize: 2,
+    },
+    {
+        title: "Mathy",
+        description: "A website to improve your mental math.",
+        type: "website",
+    },
+    {
+        title: "exstare.eu",
+        description:
+            'My first hosted website, back when I was called "Exstare".',
+        type: "website",
+        killed: true,
+    },
+    {
+        title: "Card Collecting Game",
+        description:
+            "Self-explanatory. Ability to collect and trade cards from many different categories & subcategories.",
+        type: "website",
+    },
+];
+---
+
+<Layout title="Graveyard">
+    <h1 class="mt-4">Graveyard</h1>
+    <div class="space-y-2">
+        <p>
+            A painful reminder of the past. Here lies in no particular order the
+            projects that have been killed or didn't make the light of day. May
+            they rest in peace and maybe one day, they'll be resurrected.
+        </p>
+        <p class="text-sm italic">
+            (I might have forgotten some projects, so this list may not be
+            exhaustive. Also, I had to dig through old chats to find old
+            screenshots & messages.)
+        </p>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+        {
+            graveyard.map((project) => (
+                <Window>
+                    <p class="badge">{project.type}</p>
+                    <h2 class="mt-2">{project.title}</h2>
+                    <p>{project.description}</p>
+                    <!--
+                        NOTE(Iserila): Someday I'll put the image at the bottom.
+                            For now I can't seem to figure out how to do it...
+                            It's constantly off the screen ;-;
+                    -->
+                    {project.image && (
+                        <Image
+                            class={`mt-2 rounded-sm w-full object-contain`}
+                            src={project.image.url}
+                            alt={`preview ${project.title}`}
+                            inferSize={true}
+                            width={720}
+                            height={480}
+                        />
+                    )}
+                </Window>
+            ))
+        }
+    </div>
+</Layout>

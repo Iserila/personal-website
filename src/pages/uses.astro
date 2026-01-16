@@ -1,0 +1,168 @@
+---
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+
+const uses = [
+    {
+        title: "Hardware",
+        description: "Physical devices I use daily",
+        items: [
+            {
+                name: "Laptop",
+                detail: "Dell Precision 3571",
+            },
+            {
+                name: "Phone",
+                detail: "Google Pixel 9a with GrapheneOS (privacy-focused OS)",
+            },
+            {
+                name: "E-Reader",
+                detail: "Kobo Clara BW",
+            },
+            {
+                name: "Smartwatch",
+                detail: "Garmin Forerunner 55 (might switch to use Gadgetbridge)",
+            },
+            {
+                name: "Digital Audio Player",
+                detail: "HiBy R3 II",
+            },
+        ],
+    },
+    {
+        title: "Software",
+        description: "Operating systems and applications I use",
+        items: [
+            {
+                name: "Operating System",
+                detail: "Dual-boot (daily) Arch and (backup/games) Windows",
+            },
+            {
+                name: "Browser",
+                detail: "(Laptop) Waterfox, (Phone) Vanadium (GrapheneOS default)",
+            },
+            {
+                name: "Email",
+                detail: "Thunderbird (desktop), SimpleLogin for aliases, mailbox on Mailbox.org",
+            },
+            {
+                name: "Notes",
+                detail: "Obsidian, synced using Syncthing",
+            },
+            {
+                name: "Music Player",
+                detail: "MusicBee (Windows), exploring rmpc for Arch",
+            },
+            {
+                name: "Podcasts",
+                detail: "AntennaPod",
+            },
+            {
+                name: "Maps & Navigation",
+                detail: "Trying OrganicMaps, previously on OsmAnd",
+            },
+        ],
+    },
+    {
+        title: "Development",
+        description: "Coding tools and technologies I use",
+        items: [
+            {
+                name: "Code Editors",
+                detail: "Zed & VSCode",
+            },
+            {
+                name: "Version Control",
+                detail: "Git & Github",
+            },
+            {
+                name: "Primary Languages",
+                detail: "JavaScript, TypeScript",
+            },
+            {
+                name: "Frameworks",
+                detail: "SvelteKit, Astro",
+            },
+            {
+                name: "Other Tools",
+                detail: "Node.js, Docker, SQL Databases",
+            },
+        ],
+    },
+    {
+        title: "Hosting & Infrastructure",
+        description: "Services I use for hosting, domains, tunneling, and DNS",
+        items: [
+            {
+                name: "Web Hosting / Deployment",
+                detail: "Netlify & Vercel",
+            },
+            {
+                name: "DNS & Tunnels",
+                detail: "Cloudflare (domains, DNS, Argo Tunnel)",
+            },
+            {
+                name: "Home Server",
+                detail: "Raspberry Pi 5 for experimentation, planning proper upgrade later",
+            },
+        ],
+    },
+    {
+        title: "Security & Privacy",
+        description: "Tools I use to keep my devices and data secure",
+        items: [
+            {
+                name: "2FA",
+                detail: "Ente Auth",
+            },
+            {
+                name: "VPN",
+                detail: "Proton VPN",
+            },
+            {
+                name: "Password Manager",
+                detail: "Bitwarden",
+            },
+        ],
+    },
+    {
+        title: "Other",
+        description: "Other stuff I use",
+        items: [
+            {
+                name: "Anime Tracking",
+                detail: "Anilist (Android client: AniHyou)",
+            },
+        ],
+    },
+];
+---
+
+<Layout title="Home">
+    <h1 class="mt-4">Uses</h1>
+    <p>
+        Inspired by
+        <a href="https://uses.tech/" target="_blank">uses.tech</a>.
+    </p>
+    <div class="grid grid-cols-1 gap-4">
+        {
+            uses.map((category) => (
+                <Window title={category.title.toLowerCase() + ".txt"}>
+                    <h2>{category.title}</h2>
+                    <table>
+                        <tbody>
+                            {category.items.map((item) => (
+                                <tr>
+                                    <td>
+                                        <strong>{item.name}</strong>
+                                    </td>
+                                    <td>{item.detail}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </Window>
+            ))
+        }
+    </div>
+</Layout>

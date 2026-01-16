@@ -43,7 +43,18 @@
     }
 
     a {
-        @apply hover:text-primary-foreground/50;
+        @apply hover:text-primary-foreground/50 underline;
+    }
+
+    nav > a {
+        @apply no-underline;
+    }
+
+    tr {
+        @apply not-last:border-b border-border;
+        @apply hover:bg-base-muted;
+        @apply transition-all duration-200;
+        @apply h-10;
     }
 }
 

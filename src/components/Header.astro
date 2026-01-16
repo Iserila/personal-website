@@ -26,10 +26,6 @@ const pages: Page[] = [
         title: "Graveyard",
         url: "/graveyard",
     },
-    {
-        title: "Shares",
-        url: "/shares",
-    },
 ];
 
 function linkClasses(page: Page) {
@@ -41,7 +37,7 @@ function linkClasses(page: Page) {
 
 <header class="flex justify-between py-4">
     <div>Iserila 🌸</div>
-    <div class="flex gap-4">
+    <nav class="flex gap-4">
         {
             pages.map((page) => {
                 return (
@@ -51,5 +47,5 @@ function linkClasses(page: Page) {
                 );
             })
         }
-    </div>
+    </nav>
 </header>

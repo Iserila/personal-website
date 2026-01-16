@@ -1,5 +1,5 @@
 # ✨ My Website
-This is my _second_ attempt at an **IndieWeb** website, built with [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com), and a lot of music.
+This is my ~~first~~ _second_ attempt at an **IndieWeb** website, built with [Astro](https://astro.build), [Tailwind CSS](https://tailwindcss.com), and a lot of music & procrastination (◞‸ ◟).
 
 > [!WARNING]
 > Since I'm new to the Indieweb, I am well aware that the code isn't up-to-code with the [IndieWeb spec](https://indieweb.org/) (actually, possibly not at all). I will keep working on this.

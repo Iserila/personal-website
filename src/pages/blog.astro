@@ -1,0 +1,18 @@
+---
+import BlogEntry from "../components/blog/BlogEntry.astro";
+import Layout from "../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("blog");
+---
+
+<Layout title="Home">
+    <h1 class="mt-4">Blog</h1>
+    <div class="grid lg:grid-cols-2 gap-4">
+        {
+            posts.map((post) => {
+                return <BlogEntry post={post} />;
+            })
+        }
+    </div>
+</Layout>

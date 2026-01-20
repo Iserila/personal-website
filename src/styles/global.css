@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* Colors */
 @theme {
@@ -46,7 +47,10 @@
         @apply hover:text-primary-foreground/50 underline;
     }
 
-    nav > a {
+    .btn,
+    ul > li > a,
+    nav > a,
+    article > a {
         @apply no-underline;
     }
 
@@ -55,6 +59,11 @@
         @apply hover:bg-base-muted;
         @apply transition-all duration-200;
         @apply h-10;
+    }
+
+    hr {
+        @apply border;
+        @apply my-4;
     }
 }
 
@@ -90,8 +99,22 @@
 
     .badge {
         @apply bg-accent border-accent-foreground;
-        @apply text-accent-foreground text-xs;
+        @apply text-accent-foreground text-xs no-underline;
         @apply py-1 px-2 rounded-md;
         @apply w-max;
+    }
+
+    /* Additional style for badge, overriding colros */
+    .badge-date {
+        @apply bg-secondary border-secondary-foreground;
+        @apply text-primary-foreground;
+    }
+
+    .btn {
+        @apply bg-accent text-accent-foreground;
+        @apply py-2 px-4 rounded-md;
+        @apply w-max mx-auto;
+        @apply flex items-center gap-2;
+        @apply hover:bg-accent-foreground hover:text-accent duration-300;
     }
 }

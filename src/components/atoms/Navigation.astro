@@ -1,0 +1,52 @@
+---
+interface Page {
+    title: string;
+    url: string;
+}
+
+const current = Astro.url.pathname;
+const pages: Page[] = [
+    {
+        title: "About",
+        url: "/about",
+    },
+    {
+        title: "Blog",
+        url: "/blog",
+    },
+    {
+        title: "What I use",
+        url: "/uses",
+    },
+    {
+        title: "Now",
+        url: "/now",
+    },
+    {
+        title: "Graveyard",
+        url: "/graveyard",
+    },
+];
+
+function linkClasses(page: Page) {
+    return `border-b-2 ${
+        current.startsWith(page.url) && page.url !== "/"
+            ? "border-b-accent"
+            : "border-transparent"
+    }`;
+}
+
+const { mobile = false } = Astro.props;
+---
+
+<nav class={mobile ? "flex flex-col gap-4 w-max" : "hidden lg:flex gap-4"}>
+    {
+        pages.map((page) => {
+            return (
+                <a href={page.url} class={linkClasses(page)}>
+                    {page.title}
+                </a>
+            );
+        })
+    }
+</nav>

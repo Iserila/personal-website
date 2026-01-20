@@ -1,55 +1,14 @@
 ---
-interface Page {
-    title: string;
-    url: string;
-}
-
-const current = Astro.url.pathname;
-const pages: Page[] = [
-    {
-        title: "Home",
-        url: "/",
-    },
-    {
-        title: "About",
-        url: "/about",
-    },
-    {
-        title: "Blog",
-        url: "/blog",
-    },
-    {
-        title: "What I use",
-        url: "/uses",
-    },
-    {
-        title: "Now",
-        url: "/now",
-    },
-    {
-        title: "Graveyard",
-        url: "/graveyard",
-    },
-];
-
-function linkClasses(page: Page) {
-    return `border-b-2 ${
-        current === page.url ? "border-b-accent" : "border-transparent"
-    }`;
-}
+import Menu from "./atoms/Menu.astro";
+import MobileNavigation from "./atoms/MobileNavigation.astro";
+import Navigation from "./atoms/Navigation.astro";
 ---
 
-<header class="flex justify-between py-4">
-    <div>Iserila 🌸</div>
-    <nav class="flex gap-4">
-        {
-            pages.map((page) => {
-                return (
-                    <a href={page.url} class={linkClasses(page)}>
-                        {page.title}
-                    </a>
-                );
-            })
-        }
-    </nav>
+<header class="flex justify-between items-center py-4">
+    <div><a href="/" class="no-underline">Iserila 🌸</a></div>
+    <div>
+        <Menu />
+        <Navigation />
+        <MobileNavigation />
+    </div>
 </header>

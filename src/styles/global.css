@@ -117,4 +117,10 @@
         @apply flex items-center gap-2;
         @apply hover:bg-accent-foreground hover:text-accent duration-300;
     }
+
+    .menu {
+        @apply p-2 rounded-md;
+        @apply flex items-center gap-2;
+        @apply focus:outline-none focus:ring-2 focus:ring-accent-foreground focus:ring-offset-2;
+    }
 }

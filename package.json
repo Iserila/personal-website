@@ -15,6 +15,7 @@
     "@fontsource/fredericka-the-great": "^5.2.7",
     "@tailwindcss/vite": "^4.1.17",
     "astro": "^5.16.4",
+    "sharp": "^0.34.5",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {

@@ -7,16 +7,18 @@ import Buttons from "../components/home/Buttons.astro";
 import MyButton from "../components/home/MyButton.astro";
 import Links from "../components/home/Links.astro";
 import About from "../components/home/About.astro";
+import StatusCafe from "../components/home/StatusCafe.astro";
 ---
 
 <Layout title="Home">
-    <h1 class="mt-4">Hiyaa, welcome!</h1>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <About />
-        <Friends />
-        <Fanlistings />
-        <Buttons />
-        <MyButton />
-        <Links />
-    </div>
+  <h1 class="mt-4">Hiyaa, welcome!</h1>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <About />
+    <StatusCafe />
+    <Friends />
+    <Fanlistings />
+    <Buttons />
+    <MyButton />
+    <Links />
+  </div>
 </Layout>

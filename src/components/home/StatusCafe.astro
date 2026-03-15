@@ -1,0 +1,12 @@
+---
+import Window from "../Window.astro";
+---
+
+<Window title="status-cafe.json" width={1}>
+  <div id="statuscafe">
+    <div id="statuscafe-username"></div><div id="statuscafe-content"></div>
+  </div>
+</Window>
+
+<script is:inline src="https://status.cafe/current-status.js?name=iserila" defer
+></script>

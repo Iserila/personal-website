@@ -3,38 +3,61 @@ import { Image } from "astro:assets";
 import Window from "../Window.astro";
 
 const friends = [
-    {
-        name: "Bean",
-        url: "https://beanrob.com",
-        button: "https://beanrob.com/static/button.gif",
-    },
-    {
-        name: "fugastra",
-        url: "https://fugastra.github.io",
-        button: "https://fugastra.github.io/imgs/button.gif",
-    },
+  {
+    name: "Bean",
+    url: "https://beanrob.com",
+    button: "https://beanrob.com/static/button.gif",
+  },
+  {
+    name: "fugastra",
+    url: "https://fugastra.github.io",
+    button: "https://fugastra.github.io/imgs/button.gif",
+  },
+];
+
+const lazyPeasants = [
+  {
+    name: "Julius",
+    url: "https://juliusdeboer.com",
+  },
+  {
+    name: "AcidicPotato",
+    url: "https://acidicpotato.com",
+  },
+  {
+    name: "Carbon",
+    url: "https://carbonic.design",
+  },
 ];
 ---
 
 <Window title="friends.exe">
-    <h2>Friends</h2>
-    <p class="text-sm">It's all about the friends we make along the way 🩷</p>
-    <div class="mt-2 flex gap-2 flex-wrap">
-        {
-            friends
-                .filter((x) => x.button !== null)
-                .map((friend) => (
-                    <a href={friend.url} target="_blank">
-                        <Image
-                            height={31}
-                            width={88}
-                            src={friend.button}
-                            alt={`Button from ${friend.name}`}
-                        />
-                    </a>
-                ))
-        }
-    </div>
-    <h3 class="text-sm mt-4">Lazy peasant(s) without a ✨ button ✨</h3>
-    <a class="font-bold italic" href="https://juliusdeboer.com">Julius</a>
+  <h2>Friends</h2>
+  <p class="text-sm">It's all about the friends we make along the way 🩷</p>
+  <div class="mt-2 flex gap-2 flex-wrap">
+    {
+      friends
+        .filter((x) => x.button !== null)
+        .map((friend) => (
+          <a href={friend.url} target="_blank">
+            <Image
+              height={31}
+              width={88}
+              src={friend.button}
+              alt={`Button from ${friend.name}`}
+            />
+          </a>
+        ))
+    }
+  </div>
+  <h3 class="text-sm mt-4">Lazy peasant(s) without a ✨ button ✨</h3>
+  <div class="flex gap-4">
+    {
+      lazyPeasants.map((friend) => (
+        <a class="font-bold italic" href={friend.url} target="_blank">
+          {friend.name}
+        </a>
+      ))
+    }
+  </div>
 </Window>

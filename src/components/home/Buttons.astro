@@ -2,28 +2,54 @@
 import Window from "../Window.astro";
 
 const buttons = [
-    "chrome.gif",
-    "ditchsocial.gif",
-    "freeware.gif",
-    "graphicdesign.png",
-    "nicotine-plus.png",
-    "no-facebook.png",
-    "piracy.gif",
+  "chrome.gif",
+  "ditchsocial.gif",
+  "fedora.png",
+  "freeware.gif",
+  "graphicdesign.png",
+  "nicotine-plus.png",
+  "no-facebook.png",
+  "piracy.gif",
+  "ublock.png",
+];
+
+const stamps = [
+  "are-you-okay.png",
+  "cat.png",
+  "download-car.png",
+  "heartcandy.png",
+  "love-my-laptop.png",
+  "sakura.png",
+  "typos.gif",
 ];
 ---
 
 <Window title="buttons.exe" width={2}>
-    <h2>Buttons</h2>
-    <p class="text-sm">Meow! ᓚᘏᗢ</p>
+  <h2>Buttons & More</h2>
+  <p class="text-sm">Meow! ᓚᘏᗢ</p>
+  <div>
     <div class="mt-2 flex flex-wrap gap-1 justify-between">
-        {
-            buttons.map((button) => (
-                <img
-                    src={`/buttons/${button}`}
-                    class="h-[31px] w-[88px]"
-                    alt={`Button ${button}`}
-                />
-            ))
-        }
+      {
+        buttons.map((button) => (
+          <img
+            src={`/buttons/${button}`}
+            class="h-[31px] w-[88px]"
+            alt={`Button ${button}`}
+          />
+        ))
+      }
     </div>
+    <hr />
+    <div class="mt-2 flex flex-wrap gap-1 justify-between">
+      {
+        stamps.map((stamp) => (
+          <img
+            src={`/stamps/${stamp}`}
+            class="object-contain"
+            alt={`Stamp ${stamp}`}
+          />
+        ))
+      }
+    </div>
+  </div>
 </Window>

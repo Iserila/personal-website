@@ -1,0 +1,427 @@
+@layer base {
+  .danger-page {
+    background: #1a1a1a !important;
+    color: #d0d0d0;
+  }
+
+  .danger-page h1,
+  .danger-page h2 {
+    color: #f0f0f0;
+  }
+
+  .danger-page a {
+    color: #ff6666;
+  }
+
+  .danger-page a:hover {
+    color: #ff9999;
+  }
+
+  .danger-page tr {
+    border-color: #3a3a3a;
+  }
+
+  .danger-page tr:hover {
+    background: #2a2a2a !important;
+  }
+
+  /* Page-level body text brighter */
+  .danger-page p,
+  .danger-page td {
+    color: #d0d0d0;
+  }
+}
+
+@layer components {
+  /* Strikethrough on "Google" */
+  .danger-strike {
+    position: relative;
+    display: inline-block;
+    color: #ff4444;
+  }
+  .danger-strike::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    top: 50%;
+    height: 3px;
+    background: #ff4444;
+    transform: rotate(-6deg);
+  }
+
+  /* Blinking ⚠ RANT badge */
+  .danger-badge {
+    display: inline-block;
+    background: #cc2222;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    padding: 2px 8px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    animation: danger-blink 2.5s step-end infinite;
+  }
+
+  @keyframes danger-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+  }
+
+  /* Diagonal hazard stripe */
+  .danger-stripe {
+    background: repeating-linear-gradient(
+      -45deg,
+      #cc2222,
+      #cc2222 8px,
+      #3a1a1a 8px,
+      #3a1a1a 18px
+    );
+    height: 6px;
+    border-radius: 2px;
+    margin: 0.75rem 0 1.25rem;
+    opacity: 0.8;
+  }
+
+  /* Left-border intro note */
+  .danger-note {
+    font-size: 0.85rem;
+    color: #bbb;
+    border-left: 3px solid #cc2222;
+    padding-left: 0.75rem;
+    margin-top: 0.75rem;
+  }
+
+  /* Category description under the h2 */
+  .danger-category-desc {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 1rem;
+  }
+
+  /* Item names in danger sections */
+  .danger-item-name {
+    color: #ff7070;
+    font-weight: 700;
+  }
+
+  /* Severity pills */
+  .severity-pill {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 1px 5px;
+    border-radius: 2px;
+    white-space: nowrap;
+    vertical-align: middle;
+    margin-left: 4px;
+  }
+  .severity-critical {
+    background: #cc2222;
+    color: #fff;
+  }
+  .severity-high {
+    background: #c05000;
+    color: #fff;
+  }
+  .severity-medium {
+    background: #8a6f00;
+    color: #fff;
+  }
+  .severity-info {
+    background: #1e4d3a;
+    color: #a8e6cf;
+  }
+}
+
+@layer utilities {
+  /* Danger windows */
+  .window-danger {
+    background: #242424 !important;
+    border-color: #3a3a3a !important;
+    color: #d0d0d0 !important;
+  }
+  .window-danger .window-titlebar {
+    background: #181818 !important;
+    border-bottom: 2px solid #cc2222 !important;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+  .window-danger .window-title {
+    color: #ff5555 !important;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.7rem !important;
+  }
+  .window-danger .window-content {
+    background: #242424 !important;
+    color: #d0d0d0 !important;
+    padding: 1.25rem !important;
+    gap: 0.5rem !important;
+  }
+  .window-danger .window-close {
+    background: #3a1a1a !important;
+    color: #ff6666 !important;
+  }
+  .window-danger .window-close:hover {
+    background: #cc2222 !important;
+    color: #fff !important;
+  }
+  .window-danger tr {
+    border-color: #333 !important;
+    height: auto !important;
+    min-height: 3rem !important;
+  }
+  .window-danger tr:hover {
+    background: #2e2e2e !important;
+  }
+  .window-danger td {
+    color: #d0d0d0 !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  /* Left column: item name cell */
+  .window-danger td:first-child {
+    padding-right: 1.5rem !important;
+    min-width: 11rem !important;
+    vertical-align: top !important;
+  }
+  /* Right column: description */
+  .window-danger td:last-child {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    color: #c8c8c8 !important;
+    vertical-align: top !important;
+  }
+
+  /* Safe / alternatives window */
+  .window-safe {
+    background: #1a2420 !important;
+    border-color: #2f5d50 !important;
+    color: #d0d0d0 !important;
+  }
+  .window-safe .window-titlebar {
+    background: #141f1c !important;
+    border-bottom: 2px solid #2f5d50 !important;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
+  }
+  .window-safe .window-title {
+    color: #a8e6cf !important;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 0.7rem !important;
+  }
+  .window-safe .window-content {
+    background: #1a2420 !important;
+    color: #d0d0d0 !important;
+    padding: 1.25rem !important;
+    gap: 0.5rem !important;
+  }
+  .window-safe .window-close {
+    background: #1e3a30 !important;
+    color: #a8e6cf !important;
+  }
+  .window-safe .window-close:hover {
+    background: #2f5d50 !important;
+    color: #fff !important;
+  }
+  .window-safe tr {
+    border-color: #2a3d38 !important;
+    height: auto !important;
+    min-height: 3rem !important;
+  }
+  .window-safe tr:hover {
+    background: #1f2e2a !important;
+  }
+  .window-safe td {
+    color: #d0d0d0 !important;
+    padding-top: 0.75rem !important;
+    padding-bottom: 0.75rem !important;
+  }
+  .window-safe td:first-child {
+    padding-right: 1.5rem !important;
+    min-width: 11rem !important;
+    vertical-align: top !important;
+  }
+  .window-safe td:last-child {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    color: #b8b8b8 !important;
+    vertical-align: top !important;
+  }
+  .window-safe a {
+    color: #a8e6cf !important;
+  }
+  .window-safe a:hover {
+    color: #fff !important;
+  }
+}
+
+/* Nav link base & states */
+@layer components {
+  .nav-link {
+    font-size: 0.875rem;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+    text-decoration: none;
+  }
+
+  .nav-link:hover {
+    border-color: #9ca3af; /* gray-400 */
+  }
+
+  .nav-link-active {
+    border-color: var(--color-accent);
+  }
+
+  /* Danger nav link */
+  .nav-link-danger {
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    background: #dc2626;
+    border: none;
+    border-radius: 3px;
+    padding: 3px 10px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-link-danger:hover {
+    background: #b91c1c;
+    color: #fff !important;
+  }
+
+  .nav-link-danger.nav-link-active {
+    background: #991b1b;
+  }
+}
+
+/* Mini card item layout */
+@layer utilities {
+  .danger-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .danger-item {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-left: 3px solid #555;
+    border-radius: 4px;
+    padding: 12px 14px;
+  }
+
+  .danger-item.danger-item-critical {
+    border-left-color: #cc2222;
+  }
+
+  .danger-item.danger-item-high {
+    border-left-color: #c05000;
+  }
+
+  .danger-item.danger-item-medium {
+    border-left-color: #8a6f00;
+  }
+
+  .danger-item.danger-item-info {
+    border-left-color: #1e4d3a;
+  }
+
+  .danger-item-heading {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #f0f0f0;
+    margin: 0 0 6px 0;
+    line-height: 1.4;
+  }
+
+  .danger-item-heading a {
+    color: #f0f0f0 !important;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .danger-item-heading a:hover {
+    color: #ff7070 !important;
+  }
+
+  .danger-item-detail {
+    font-size: 0.85rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .danger-item-detail a {
+    color: #ff7070 !important;
+  }
+
+  /* Safe / alternatives section cards */
+  .window-safe .danger-item {
+    background: #161f1c;
+    border-color: #2a3d38;
+    border-left-color: #2f5d50;
+  }
+
+  .window-safe .danger-item-heading {
+    color: #e0e0e0;
+  }
+
+  .window-safe .danger-item-heading a {
+    color: #a8e6cf !important;
+  }
+
+  .window-safe .danger-item-heading a:hover {
+    color: #fff !important;
+  }
+
+  .window-safe .danger-item-detail a {
+    color: #a8e6cf !important;
+  }
+
+  /* List stuff */
+  .danger-item-links {
+    list-style: none;
+    margin: 6px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+ 
+  .danger-item-links li a {
+    font-size: 0.75rem;
+    color: #ff7070 !important;
+    text-decoration: none;
+    border: 1px solid #cc222244;
+    border-radius: 3px;
+    padding: 1px 7px;
+    transition: background 0.15s, border-color 0.15s;
+  }
+ 
+  .danger-item-links li a:hover {
+    background: #cc222222;
+    border-color: #cc2222aa;
+  }
+ 
+  .window-safe .danger-item-links li a {
+    color: #a8e6cf !important;
+    border-color: #2f5d5044;
+  }
+ 
+  .window-safe .danger-item-links li a:hover {
+    background: #2f5d5022;
+    border-color: #2f5d50aa;
+  }
+
+}

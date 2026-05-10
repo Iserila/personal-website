@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "./danger.css";
+
 @plugin "@tailwindcss/typography";
 
 /* Colors */
@@ -72,7 +74,6 @@
   .window {
     @apply border border-border bg-base-muted shadow-lg;
     @apply transition-all duration-200;
-    @apply h-full;
   }
   
   .window-titlebar {
@@ -95,7 +96,7 @@
   
   .window-content {
     @apply p-4 text-foreground;
-    @apply flex flex-col h-full;
+    @apply flex flex-col h-fit;
   }
   
   .badge {

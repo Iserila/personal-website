@@ -1,52 +1,46 @@
 ---
 interface Page {
-    title: string;
-    url: string;
+  title: string;
+  url: string;
+  danger?: boolean;
 }
-
 const current = Astro.url.pathname;
 const pages: Page[] = [
-    {
-        title: "About",
-        url: "/about",
-    },
-    {
-        title: "Blog",
-        url: "/blog",
-    },
-    {
-        title: "What I use",
-        url: "/uses",
-    },
-    {
-        title: "Now",
-        url: "/now",
-    },
-    {
-        title: "Graveyard",
-        url: "/graveyard",
-    },
+  { title: "About", url: "/about" },
+  { title: "Blog", url: "/blog" },
+  { title: "What I use", url: "/uses" },
+  { title: "Now", url: "/now" },
+  { title: "Graveyard", url: "/graveyard" },
+  { title: "F* Google", url: "/f-google", danger: true },
 ];
 
 function linkClasses(page: Page) {
-    return `border-b-2 ${
-        current.startsWith(page.url) && page.url !== "/"
-            ? "border-b-accent"
-            : "border-transparent"
-    }`;
+  const isActive = current.startsWith(page.url) && page.url !== "/";
+  if (page.danger) {
+    return `nav-link nav-link-danger${isActive ? " nav-link-active" : ""}`;
+  }
+  return `nav-link${isActive ? " nav-link-active" : ""}`;
 }
 
 const { mobile = false } = Astro.props;
 ---
 
-<nav class={mobile ? "flex flex-col gap-4 w-max" : "hidden lg:flex gap-4"}>
-    {
-        pages.map((page) => {
-            return (
-                <a href={page.url} class={linkClasses(page)}>
-                    {page.title}
-                </a>
-            );
-        })
-    }
+<nav
+  class={mobile
+    ? "flex flex-col gap-4 w-max"
+    : "hidden lg:flex gap-4 items-center"}
+>
+  {
+    pages.map((page) =>
+      page.danger ? (
+        <a href={page.url} class={linkClasses(page)}>
+          {page.title}
+        </a>
+      ) : (
+        <a href={page.url} class={linkClasses(page)}>
+          {page.title}
+        </a>
+      ),
+    )
+  }
 </nav>

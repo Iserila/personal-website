@@ -1,0 +1,275 @@
+---
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface ItemLink {
+  text: string;
+  href: string;
+}
+
+interface Item {
+  name: string;
+  detail: string;
+  severity: "critical" | "high" | "medium" | "info";
+  link?: string;
+  links?: ItemLink[];
+}
+
+interface Category {
+  title: string;
+  windowTitle: string;
+  description: string;
+  danger: boolean;
+  items: Item[];
+}
+
+const issues: Category[] = [
+  {
+    title: "They're locking down Android",
+    windowTitle: "locking-down-android",
+    description: "Android used to be genuinely open. It's not anymore.",
+    danger: true,
+    items: [
+      {
+        name: "Their 'escape hatch' is a trap door",
+        detail: `Google claims power users can still sideload apps. In practice: tap the build number seven times, dismiss scare screens, enter your PIN, restart, wait 24 hours, dismiss more warnings, then confirm you understand "the risks". Nine steps. A mandatory 24-hour cooling-off period. On a device you own. This flow runs through Google Play Services, not the OS, so Google can change or kill it at any time with no update required.`,
+        link: "https://keepandroidopen.org",
+        severity: "critical",
+        links: [
+          { text: "keepandroidopen.org", href: "https://keepandroidopen.org" },
+        ],
+      },
+      {
+        name: "Apps can refuse to run on your own device",
+        detail: `Google's Play Integrity API lets apps check whether your phone is "certified" by Google. Running GrapheneOS or CalyxOS? Banking apps, streaming apps, and even some government apps may simply refuse to open. Google decides what counts as a legitimate device, not you.`,
+        severity: "critical",
+        links: [
+          { text: "keepandroidopen.org", href: "https://keepandroidopen.org" },
+        ],
+      },
+      {
+        name: "They want to lock the bootloader",
+        detail: `Google has been pushing phone makers to ship devices with locked bootloaders and make unlocking harder or impossible. You can't run your own software on hardware you paid for.`,
+        severity: "high",
+      },
+    ],
+  },
+  {
+    title: "Their services are everywhere, by design",
+    windowTitle: "everywhere-by-design",
+    description:
+      "Google has made themselves impossible to avoid, even on non-Google things.",
+    danger: true,
+    items: [
+      {
+        name: "reCAPTCHA requires Google Play Services",
+        detail: `The "I'm not a robot" widget used on millions of websites quietly requires Google Play Services on Android. No Play Services? Expect an infinite CAPTCHA loop or an outright block. A web standard held hostage by Google's proprietary software.`,
+        severity: "critical",
+        link: "https://support.google.com/recaptcha/answer/16609652?hl=en",
+        links: [
+          {
+            text: "Google Support: Troubleshoot reCAPTCHA Mobile Verification",
+            href: "https://support.google.com/recaptcha/answer/16609652?hl=en",
+          },
+          {
+            text: "Article from PiunikaWeb",
+            href: "https://piunikaweb.com/2026/05/07/google-recaptcha-play-services-requirement/",
+          },
+          {
+            text: "Article from Android Authority",
+            href: "https://www.androidauthority.com/google-recaptcha-play-services-requirement-3664806/",
+          },
+          {
+            text: "Article from Reclaim The Net.",
+            href: "https://reclaimthenet.org/google-broke-recaptcha-for-de-googled-android-users",
+          },
+        ],
+      },
+      {
+        name: "Push notifications go through Google",
+        detail: `Most Android apps send push notifications through Google's Firebase. That puts Google's servers between every app and every notification on your phone, your bank, your doctor's app, your chat.`,
+        severity: "high",
+      },
+    ],
+  },
+  {
+    title: "Google is a privacy nightmare",
+    windowTitle: "privacy-nightmare",
+    description:
+      "They know more about you than anyone else on earth, and they profit from it.",
+    danger: true,
+    items: [
+      {
+        name: "Every product feeds the same profile",
+        detail: `Search, YouTube, Maps, Gmail, Chrome, Android, Drive, all tied to one identity. There is no meaningful separation between Google products when it comes to your data.`,
+        severity: "critical",
+      },
+      {
+        name: "They tracked your location even when you said not to",
+        detail: `In 2018 the Associated Press found Google kept storing location data even after users turned off Location History. Google paid $391.5 million to settle with US states over it. The settings are designed to mislead.`,
+        severity: "critical",
+        links: [
+          {
+            text: "Source (AP News)",
+            href: "https://apnews.com/article/north-america-science-technology-business-ap-top-news-828aefab64d4411bac257a07c1af0ecb",
+          },
+        ],
+      },
+      {
+        name: "Chrome profiles you for ads, and no other browser does this",
+        detail: `Chrome's replacement for tracking cookies, the Topics API, doesn't stop ad profiling. It moves it into the browser itself. Google invented this, built it into Chrome, and other browsers like Firefox and Safari rejected it. The tool you browse with becomes Google's ad infrastructure.`,
+        severity: "high",
+      },
+    ],
+  },
+  {
+    title: '"Open" is just good PR',
+    windowTitle: "open-is-good-pr",
+    description:
+      "Android is technically open source. The parts that matter aren't.",
+    danger: true,
+    items: [
+      {
+        name: "Android without Google is a skeleton",
+        detail: `The Android Open Source Project is real, but Google ships Pixel builds months before releasing the source. The Play Store, Assistant, Maps, and Wallet are all proprietary. The open part is just the part nobody's making money from.`,
+        severity: "high",
+      },
+      {
+        name: "They build ecosystems, then abandon them",
+        detail: `Google Reader, Stadia, Inbox, Allo, Daydream, Google+. The pattern: build a product, attract users and developers, shut it down.`,
+        severity: "medium",
+        links: [
+          { text: "killedbygoogle.com", href: "https://killedbygoogle.com" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Further reading and alternatives",
+    windowTitle: "what-to-use",
+    description: "Places to learn more, and things you can actually use.",
+    danger: false,
+    items: [
+      {
+        name: "keepandroidopen.org",
+        detail:
+          "A campaign pushing back against Google's Android lockdown. More detailed than the .com.",
+        link: "https://keepandroidopen.org",
+        severity: "info",
+      },
+      {
+        name: "GrapheneOS",
+        detail:
+          "A privacy-focused Android you actually control. No Google, unless you want it.",
+        link: "https://grapheneos.org",
+        severity: "info",
+      },
+      {
+        name: "F-Droid",
+        detail:
+          "An app store for free and open-source Android apps. No Play Services needed.",
+        link: "https://f-droid.org",
+        severity: "info",
+      },
+      {
+        name: "PrivacyGuides.org",
+        detail:
+          "Community-maintained recommendations for browsers, email, VPNs, and more.",
+        link: "https://privacyguides.org",
+        severity: "info",
+      },
+      {
+        name: "Exodus Privacy",
+        detail:
+          "Shows you exactly which trackers are hiding inside any Android app.",
+        link: "https://exodus-privacy.eu.org",
+        severity: "info",
+      },
+    ],
+  },
+];
+
+const severityLabel: Record<string, string> = {
+  critical: "CRITICAL",
+  high: "HIGH",
+  medium: "MEDIUM",
+  info: "❤",
+};
+---
+
+<Layout title="F* Google" danger={true}>
+  <div class="danger">
+    <h1>
+      F* <span class="danger-strike">Google</span>
+      <span class="danger-badge">⚠ RANT</span>
+    </h1>
+
+    <div class="mt-2">
+      <p>Last updated: May 10, 2026</p>
+      <div class="danger-stripe"></div>
+      <p>
+        A list of the ways Google is making the web worse and your phone less
+        yours.
+      </p>
+      <p class="danger-note">
+        See also:{" "}
+        <a href="https://keepandroidopen.org" target="_blank"
+          >keepandroidopen.org</a
+        >
+        {" "}·{" "}
+        <a href="https://privacyguides.org" target="_blank">privacyguides.org</a
+        >
+        {" "}·{" "}
+        <a href="https://killedbygoogle.com" target="_blank"
+          >killedbygoogle.com</a
+        >
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 gap-4 mt-4">
+      {
+        issues.map((category) => (
+          <Window
+            title={category.windowTitle + ".txt"}
+            class={category.danger ? "window-danger" : "window-safe"}
+          >
+            <h2>{category.title}</h2>
+            <p class="danger-category-desc">{category.description}</p>
+            <div class="danger-items">
+              {category.items.map((item) => (
+                <div class={`danger-item danger-item-${item.severity}`}>
+                  <p class="danger-item-heading">
+                    {item.link ? (
+                      <a href={item.link} target="_blank">
+                        {item.name}
+                      </a>
+                    ) : (
+                      item.name
+                    )}
+                    {item.severity && (
+                      <span class={`severity-pill severity-${item.severity}`}>
+                        {severityLabel[item.severity]}
+                      </span>
+                    )}
+                  </p>
+                  <p class="danger-item-detail">{item.detail}</p>
+                  {item.links && item.links.length > 0 && (
+                    <ul class="danger-item-links">
+                      {item.links.map((l) => (
+                        <li>
+                          <a href={l.href} target="_blank">
+                            {l.text}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </Window>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

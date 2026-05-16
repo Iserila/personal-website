@@ -14,14 +14,8 @@ const now = [
       "Quit Instagram, Snapchat & Facebook 🎉 My screen time's still kinda high though, trying to swap it for reading, sketching, and running.",
   },
   {
-    title: "Cleaning up digitally",
-    description:
-      "In the process of getting my digital life together, Getting my files in one place & deleting old accounts along with their data. 🧹",
-  },
-  {
-    title: "Switched phone",
-    description:
-      "Switched to a Pixel with GrapheneOS for more privacy & more control over my device.",
+    title: "DeGoogling",
+    description: `Replacing Google and other Big Tech services with private, open-source, or self-hosted alternatives. Switched to GrapheneOS, Mailbox.org, Immich, Navidrome, and more. Tracking progress on the <a href="/degoogle">DeGoogle Progress page</a>. While at it, I've also deleted 150+ accounts.`,
   },
   {
     title: "Hopped to Fedora",
@@ -44,7 +38,7 @@ const now = [
             My previous attempts in svelte resulted into it always
             showing the current day, so maybe later ;-;
         -->
-    <p>Last updated: March 15, 2026</p>
+    <p>Last updated: May 16, 2026</p>
     <p>
       Inspired by
       <a href="https://sive.rs" target="_blank">Derek Sivers</a>
@@ -59,7 +53,7 @@ const now = [
       now.map((item, idx) => (
         <Window title={`now-${idx + 1}.txt`}>
           <h2>{item.title}</h2>
-          <p>{item.description}</p>
+          <p set:html={item.description} />
         </Window>
       ))
     }

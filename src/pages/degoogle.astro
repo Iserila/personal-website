@@ -1,0 +1,316 @@
+---
+import Window from "../components/Window.astro";
+import Layout from "../layouts/Layout.astro";
+
+interface DegoogleItem {
+  label: string;
+  status: "done" | "partial" | "todo" | "accepted";
+  replacement: string | null;
+  notes: string | null;
+}
+
+interface DegoogleCategory {
+  category: string;
+  items: DegoogleItem[];
+}
+
+const data: DegoogleCategory[] = [
+  {
+    category: "Google",
+    items: [
+      {
+        label: "Google Photos",
+        status: "done",
+        replacement: "Immich",
+        notes: "Self-hosted",
+      },
+      {
+        label: "Gmail",
+        status: "done",
+        replacement: "Mailbox.org",
+        notes: "Own domain, I might switch to Tuta/Proton later",
+      },
+      {
+        label: "Google Calendar",
+        status: "done",
+        replacement: "Mailbox.org",
+        notes: "CalDAV, might move to self-hosted",
+      },
+      {
+        label: "Google Contacts",
+        status: "done",
+        replacement: "Mailbox.org",
+        notes: "CardDAV, might move to self-hosted",
+      },
+      {
+        label: "Google Drive",
+        status: "done",
+        replacement: "OpenCloud",
+        notes: "Considering switch to Nextcloud for (working) weboffice",
+      },
+      {
+        label: "Google Authenticator",
+        status: "done",
+        replacement: "Ente Auth",
+        notes: null,
+      },
+      {
+        label: "Sign in with Google",
+        status: "done",
+        replacement: "Email + password / passkeys",
+        notes: "No remaining accounts",
+      },
+      {
+        label: "Android",
+        status: "done",
+        replacement: "GrapheneOS",
+        notes: "Apps via F-Droid, Obtainium, Aurora Store",
+      },
+      {
+        label: "Chrome",
+        status: "done",
+        replacement: "Firefox & Vanadium (GrapheneOS default)",
+        notes: "DuckDuckGo as default search, maybe SearXNG soon?",
+      },
+      {
+        label: "Google Maps",
+        status: "done",
+        replacement: "Organic Maps",
+        notes: "OpenStreetMap-based",
+      },
+      {
+        label: "Google DNS (8.8.8.8)",
+        status: "partial",
+        replacement: "Cloudflare 1.1.1.1",
+        notes:
+          "Planning AdGuard Home on home server with Quad9 or NextDNS upstream",
+      },
+      {
+        label: "YouTube",
+        status: "accepted",
+        replacement: null,
+        notes:
+          "No real alternative, might stick with Revanced or switch to an alternative front-end",
+      },
+    ],
+  },
+  {
+    category: "Meta",
+    items: [
+      {
+        label: "Instagram",
+        status: "done",
+        replacement: null,
+        notes: "Deleted",
+      },
+      {
+        label: "Facebook",
+        status: "done",
+        replacement: null,
+        notes: "Deleted",
+      },
+      {
+        label: "Snapchat",
+        status: "done",
+        replacement: null,
+        notes: "Deleted",
+      },
+      {
+        label: "WhatsApp",
+        status: "partial",
+        replacement: "Signal",
+        notes: "Still dependent on WhatsApp, using Signal where contacts allow",
+      },
+      {
+        label: "Discord",
+        status: "accepted",
+        replacement: null,
+        notes:
+          "Primary social platform, I'm far too embedded to leave. Might try Matrix for new communities.",
+      },
+    ],
+  },
+  {
+    category: "Microsoft",
+    items: [
+      {
+        label: "Windows",
+        status: "partial",
+        replacement: "Fedora (primary)",
+        notes:
+          "Dual-boot retained for games with kernel-level anticheat (Valorant, LoL), or modded R.E.P.O",
+      },
+      {
+        label: "Outlook",
+        status: "accepted",
+        replacement: null,
+        notes: "Only for school",
+      },
+      {
+        label: "Office",
+        status: "done",
+        replacement: "LibreOffice",
+        notes:
+          "Collabora in OpenCloud for weboffice not yet working, possible Nextcloud migration?",
+      },
+      {
+        label: "LinkedIn",
+        status: "accepted",
+        replacement: null,
+        notes:
+          "The worst social media platform in existence. Basically a professional necessity? Even though I despise this platform",
+      },
+      {
+        label: "GitHub",
+        status: "todo",
+        replacement: "Codeberg",
+        notes: null,
+      },
+    ],
+  },
+  {
+    category: "Infrastructure",
+    items: [
+      {
+        label: "Domain registrar",
+        status: "partial",
+        replacement: "Hetzner or INWX",
+        notes: "Currently Cloudflare. Prefer EU-based: Hetzner or INWX",
+      },
+      {
+        label: "DNS",
+        status: "partial",
+        replacement: "AdGuard Home",
+        notes:
+          "Planning self-hosted AdGuard Home on home server. Upstream: Quad9 (9.9.9.9) or NextDNS",
+      },
+      {
+        label: "Web hosting",
+        status: "partial",
+        replacement: "Self-hosted on VPS",
+        notes:
+          "Currently Vercel for static sites. VPS running Podman Quadlets. Considering Coolify or Dokploy as self-hosted alternative",
+      },
+      {
+        label: "VPN",
+        status: "done",
+        replacement: "ProtonVPN",
+        notes: "WireGuard also used for home server SSH access",
+      },
+      {
+        label: "Password manager",
+        status: "done",
+        replacement: "Bitwarden (hosted)",
+        notes: "Planning to self-host Vaultwarden",
+      },
+    ],
+  },
+  {
+    category: "Other",
+    items: [
+      {
+        label: "TikTok",
+        status: "done",
+        replacement: null,
+        notes: "Only had one for a project that I didn't finish. Never used it",
+      },
+      {
+        label: "Spotify",
+        status: "done",
+        replacement: "Navidrome",
+        notes: "Self-hosted",
+      },
+      {
+        label: "Amazon",
+        status: "accepted",
+        replacement: null,
+        notes: "Occasional shopping only. No Alexa/Echo devices.",
+      },
+      {
+        label: "Apple",
+        status: "done",
+        replacement: null,
+        notes: "Deleted",
+      },
+      {
+        label: "Payment privacy",
+        status: "todo",
+        replacement: null,
+        notes: "Actually start using virtual cards?",
+      },
+    ],
+  },
+];
+
+const allItems = data.flatMap((c) => c.items);
+const counts = {
+  done: allItems.filter((i) => i.status === "done").length,
+  partial: allItems.filter((i) => i.status === "partial").length,
+  todo: allItems.filter((i) => i.status === "todo").length,
+  accepted: allItems.filter((i) => i.status === "accepted").length,
+  total: allItems.length,
+};
+
+const statusLabel: Record<string, string> = {
+  done: "DONE",
+  partial: "PARTIAL",
+  todo: "TODO",
+  accepted: "ACCEPTED",
+};
+---
+
+<Layout title="DeGoogle" danger={true}>
+  <div class="danger">
+    <h1>
+      DeGoogle <span class="danger-badge">⚡ PROGRESS</span>
+    </h1>
+
+    <div class="mt-2">
+      <p>Last updated: May 16, 2026</p>
+      <div class="danger-stripe"></div>
+      <p>
+        Tracking my progress replacing Big Tech services with private,
+        open-source, or self-hosted alternatives. Some of these changes I've
+        made years ago, some only relatively recently.
+      </p>
+      <div class="degoogle-stats">
+        <span class="degoogle-stat-done">{counts.done} done</span>
+        <span class="degoogle-stat-partial">{counts.partial} partial</span>
+        <span class="degoogle-stat-todo">{counts.todo} todo</span>
+        <span class="degoogle-stat-accepted">{counts.accepted} accepted</span>
+        <span class="degoogle-stat-total">/ {counts.total} total</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mt-4">
+      {
+        data.map((category) => (
+          <Window
+            title={category.category.toLowerCase() + ".txt"}
+            class="window-danger"
+          >
+            <h2>{category.category}</h2>
+            <div class="danger-items">
+              {category.items.map((item) => (
+                <div class={`danger-item degoogle-item-${item.status}`}>
+                  <p class="danger-item-heading">
+                    {item.label}
+                    <span class={`status-pill status-${item.status}`}>
+                      {statusLabel[item.status]}
+                    </span>
+                  </p>
+                  {item.replacement && (
+                    <p class="degoogle-replacement">
+                      &#8594; {item.replacement}
+                    </p>
+                  )}
+                  {item.notes && <p class="danger-item-detail">{item.notes}</p>}
+                </div>
+              ))}
+            </div>
+          </Window>
+        ))
+      }
+    </div>
+  </div>
+</Layout>

@@ -11,5 +11,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  integrations: [mdx()]
+  integrations: [mdx()],
+  site: "https://iserila.com"
+  // site: "http://localhost:4321"
 });

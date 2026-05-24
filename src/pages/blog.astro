@@ -4,17 +4,27 @@ import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog")).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
 );
 ---
 
 <Layout title="Home">
-    <h1 class="mt-4">Blog</h1>
-    <div class="grid md:grid-cols-2 gap-4">
-        {
-            posts.map((post) => {
-                return <BlogEntry post={post} />;
-            })
-        }
-    </div>
+  <div class="mt-4 flex items-center justify-between">
+    <h1>Blog</h1>
+    <a
+      href="/feed.xml"
+      title="Subscribe via RSS"
+      class="flex items-center gap-1 badge badge-rss"
+    >
+      <img src="icons/rss.svg" width="14" height="14" alt="" />
+      RSS
+    </a>
+  </div>
+  <div class="grid md:grid-cols-2 gap-4">
+    {
+      posts.map((post) => {
+        return <BlogEntry post={post} />;
+      })
+    }
+  </div>
 </Layout>

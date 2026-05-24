@@ -112,6 +112,12 @@
     @apply text-primary-foreground;
   }
   
+  /* Same, but for rss */
+  .badge-rss {
+    @apply bg-orange-300;
+    @apply text-orange-700;
+  }
+  
   .btn {
     @apply bg-accent text-accent-foreground;
     @apply py-2 px-4 rounded-md;
